@@ -91,7 +91,7 @@ def otimizar(
     exigir_dia_comum: bool = True,
     fator_postos: float = 1.0,
     limite_s: float = 20.0,
-    workers: int = 8,
+    workers: int = 2,
 ) -> Resultado:
     pesos = pesos or Pesos()
 

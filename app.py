@@ -137,7 +137,7 @@ df_dia = pd.DataFrame(
 )
 fig = px.bar(
     df_dia, x="Dia", y="Pessoas", color="Cenário", barmode="group",
-    color_discrete_map={"Atual": "#c1443f", "Otimizado": "#2d7d64"},
+    color_discrete_map={"Atual": "#E8843C", "Otimizado": "#35C5C0"},
 )
 fig.update_layout(height=380, margin=dict(t=20, b=20))
 st.plotly_chart(fig, use_container_width=True)
@@ -156,7 +156,15 @@ def heat(escala, titulo):
             z=z,
             x=[ROTULO[d] for d in DIAS],
             y=recursos,
-            colorscale=[[0, "#f2f7f4"], [0.55, "#8fbfa9"], [0.8, "#e8c46a"], [1, "#b02f28"]],
+            colorscale=[
+                        [0.000, "#111823"],
+                        [0.300, "#1C4A5A"],
+                        [0.450, "#256E78"],
+                        [0.600, "#2E8B84"],
+                        [0.714, "#D9A441"],
+                        [0.857, "#DE7440"],
+                        [1.000, "#D64550"],
+                    ],
             zmin=0, zmax=140,
             texttemplate="%{z:.0f}%",
             textfont={"size": 11},
